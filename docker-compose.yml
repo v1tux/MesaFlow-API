@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:16
+    container_name: mesaflow_db
+    environment:
+      POSTGRES_USER: mesaflow
+      POSTGRES_PASSWORD: mesaflow
+      POSTGRES_DB: mesaflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: .
+    container_name: mesaflow_api
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://mesaflow:mesaflow@db:5432/mesaflow
+      SECRET_KEY: troque-essa-chave-em-producao
+      ALGORITHM: HS256
+      ACCESS_TOKEN_EXPIRE_MINUTES: 1440
+
+volumes:
+  postgres_data:
