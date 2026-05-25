@@ -1,30 +1,30 @@
 # MesaFlow API
 
-API REST completa para gerenciamento de pedidos em restaurante, criada com **FastAPI**.
+Complete REST API for managing restaurant orders, created with **FastAPI**.
 
-O projeto foi pensado para portfólio profissional de Back-End, simulando um sistema real usado por garçons, cozinha, bar e administrador.
+The project was designed for a professional Back-End portfolio, simulating a real system used by waiters, kitchen staff, bar staff, and administrators.
 
-## Funcionalidades
+## Features
 
-- Autenticação com JWT
-- Controle de usuários e permissões
-- Cadastro de mesas
-- Pessoas por mesa
-- Cardápio com categorias e imagem dos pratos
-- Lançamento de pedidos por mesa
-- Observações no pedido para cozinha/bar
-- Separação por setor: cozinha ou bar
-- Alteração de status do pedido
-- Previsão de tempo de preparo
-- Controle de pagamento
-- Ticket médio
-- Dashboard administrativo
-- Controle básico de estoque
-- Alertas de estoque baixo
-- Documentação automática Swagger
-- Docker Compose com PostgreSQL
+- JWT Authentication
+- User and Permission Control
+- Table Registration
+- People per Table
+- Menu with categories and dish images
+- Table Order Placement
+- Order Notes for Kitchen/Bar
+- Separation by Sector: Kitchen or Bar
+- Order Status Change
+- Preparation Time Estimate
+- Payment Control
+- Average Ticket Size
+- Administrative Dashboard
+- Basic Inventory Control
+- Low Stock Alerts
+- Swagger Automatic Documentation
+- Docker Compose with PostgreSQL
 
-## Tecnologias
+## Technologies
 
 - Python
 - FastAPI
@@ -35,55 +35,48 @@ O projeto foi pensado para portfólio profissional de Back-End, simulando um sis
 - Docker
 - Pytest
 
-## Como rodar localmente com SQLite
+## How to Run Locally with SQLite
 
-```bash
-python -m venv venv
-venv\Scripts\activate  # Windows
-pip install -r requirements.txt
-uvicorn app.main:app --reload
-```
+```bash python -m venv venv venv\Scripts\activate # Windows pip install -r requirements.txt uvicorn app.main:app --reload
 
-Acesse:
+Access:
 
-```txt
+txt
 http://127.0.0.1:8000/docs
-```
 
-## Como rodar com Docker e PostgreSQL
+## How to run with Docker and PostgreSQL
 
-```bash
+bash
 docker compose up --build
-```
 
-## Usuário administrador inicial
 
-Ao iniciar o projeto, o sistema cria automaticamente:
+## Initial administrator user
 
-```txt
+When starting the project, the system automatically creates:
+
+txt
 Email: admin@mesaflow.com
-Senha: admin123
-```
+Password: admin123
 
-## Estrutura
+## Structure
 
-```txt
+txt
 mesaflow-api/
 ├── app/
-│   ├── api/routes/
-│   ├── core/
-│   ├── database/
-│   ├── models/
-│   ├── schemas/
-│   ├── services/
-│   └── main.py
+│ ├── api/routes/
+│ ├── core/
+│ ├── database/
+│ ├── models/
+│ ├── schemas/
+│ ├── services/
+│ └── main.py
 ├── tests/
 ├── docker-compose.yml
 ├── Dockerfile
 ├── requirements.txt
 └── README.md
-```
 
-## Objetivo
 
-Demonstrar domínio em criação de APIs REST, regras de negócio, autenticação, banco de dados, arquitetura organizada e documentação profissional.
+## Objective
+
+Demonstrate proficiency in creating REST APIs, business rules, authentication, databases, organized architecture, and professional documentation.
