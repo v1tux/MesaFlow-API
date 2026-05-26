@@ -1,82 +1,93 @@
-# MesaFlow API
+# MesaFlow
 
-Complete REST API for managing restaurant orders, created with **FastAPI**.
+Sistema de gestão de pedidos e atendimento para restaurantes, bares e operações gastronômicas.
 
-The project was designed for a professional Back-End portfolio, simulating a real system used by waiters, kitchen staff, bar staff, and administrators.
+O **MesaFlow** nasceu com o objetivo de tornar o atendimento mais rápido, organizado e inteligente, conectando garçons, cozinha, bar e gestão em uma única experiência digital.
 
-## Features
+---
 
-- JWT Authentication
-- User and Permission Control
-- Table Registration
-- People per Table
-- Menu with categories and dish images
-- Table Order Placement
-- Order Notes for Kitchen/Bar
-- Separation by Sector: Kitchen or Bar
-- Order Status Change
-- Preparation Time Estimate
-- Payment Control
-- Average Ticket Size
-- Administrative Dashboard
-- Basic Inventory Control
-- Low Stock Alerts
-- Swagger Automatic Documentation
-- Docker Compose with PostgreSQL
+## Sobre o projeto
 
-## Technologies
+Em muitos restaurantes, o fluxo entre mesa, garçom, cozinha, bar e caixa ainda depende de comunicação manual, anotações soltas ou sistemas pouco intuitivos.
 
-- Python
-- FastAPI
-- SQLAlchemy
-- PostgreSQL / SQLite
-- JWT
-- Pydantic
-- Docker
-- Pytest
+O MesaFlow propõe uma solução moderna para esse problema: um sistema onde o garçom pode lançar pedidos diretamente pela aplicação, acompanhar o status de preparo, organizar mesas, adicionar observações importantes e melhorar a comunicação entre todos os setores da operação.
 
-## How to Run Locally with SQLite
+A ideia é reduzir erros, agilizar o atendimento e oferecer ao gestor mais controle sobre o funcionamento do restaurante.
 
-```bash python -m venv venv venv\Scripts\activate # Windows pip install -r requirements.txt uvicorn app.main:app --reload
+---
 
-Access:
+## Principais funcionalidades
 
-txt
-http://127.0.0.1:8000/docs
+- Cadastro e gerenciamento de mesas
+- Inclusão de clientes ou pessoas por mesa
+- Lançamento de pedidos por categoria
+- Visualização de pratos com imagem, nome, descrição e preço
+- Envio automático dos pedidos para cozinha ou bar
+- Status de preparo dos itens
+- Notificação quando um item estiver pronto
+- Observações por pedido, como alergias ou preferências
+- Controle de tempo médio de preparo
+- Organização por setores: salão, cozinha, bar e caixa
+- Visualização de ticket médio
+- Histórico de pedidos por mesa
+- Fluxo pensado para uso em celular, tablet ou desktop
 
-## How to run with Docker and PostgreSQL
+---
 
-bash
-docker compose up --build
+## Problema que o MesaFlow resolve
 
+Restaurantes costumam lidar com desafios como:
 
-## Initial administrator user
+- Pedidos anotados de forma incorreta
+- Comunicação lenta entre salão e cozinha
+- Falta de visibilidade sobre o andamento dos pratos
+- Dificuldade para controlar mesas ocupadas
+- Erros em observações importantes, como alergias
+- Falta de dados para tomada de decisão
+- Tempo de atendimento acima do ideal
 
-When starting the project, the system automatically creates:
+O MesaFlow busca centralizar esse processo e transformar o atendimento em um fluxo mais claro, rastreável e eficiente.
 
-txt
-Email: admin@mesaflow.com
-Password: admin123
+---
 
-## Structure
+## Diferenciais do projeto
 
-txt
-mesaflow-api/
-├── app/
-│ ├── api/routes/
-│ ├── core/
-│ ├── database/
-│ ├── models/
-│ ├── schemas/
-│ ├── services/
-│ └── main.py
-├── tests/
-├── docker-compose.yml
-├── Dockerfile
-├── requirements.txt
-└── README.md
+- Interface simples para uso rápido durante o atendimento
+- Foco em experiência real de restaurante
+- Organização por categorias de produtos
+- Pensado para expansão futura como SaaS
+- Possibilidade de integração com cozinha, bar, estoque e pagamentos
+- Estrutura preparada para evoluir com permissões, relatórios e dashboards
+- Produto inspirado em problemas reais de operação gastronômica
 
+---
 
-## Objective
+## Fluxo principal
 
-Demonstrate proficiency in creating REST APIs, business rules, authentication, databases, organized architecture, and professional documentation.
+1. O garçom seleciona a mesa.
+2. Adiciona clientes ou quantidade de pessoas.
+3. Escolhe os produtos do cardápio.
+4. Insere observações, se necessário.
+5. Envia o pedido.
+6. A cozinha ou o bar recebe o item.
+7. O responsável atualiza o status.
+8. O garçom é notificado quando estiver pronto.
+9. O pedido é entregue e fica registrado no histórico da mesa.
+
+---
+
+## Exemplo de pedido
+
+```json
+{
+  "mesa": 8,
+  "cliente": "Mesa 8",
+  "itens": [
+    {
+      "produto": "Risoto de Camarão",
+      "quantidade": 1,
+      "observacao": "Cliente alérgico a camarão. Retirar camarão do preparo."
+    }
+  ],
+  "status": "em_preparo"
+}
