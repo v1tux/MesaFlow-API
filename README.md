@@ -20,7 +20,6 @@ A ideia é reduzir erros, agilizar o atendimento e oferecer ao gestor mais contr
 
 - Cadastro e gerenciamento de mesas
 - Inclusão de clientes ou pessoas por mesa
-- Lançamento de pedidos por categoria
 - Visualização de pratos com imagem, nome, descrição e preço
 - Envio automático dos pedidos para cozinha ou bar
 - Status de preparo dos itens
