@@ -1,6 +1,6 @@
 # MesaFlow
 
-Sistema de gestão de pedidos e atendimento para restaurantes, bares e operações gastronômicas.
+Sistema de gestão de pedidos, atendimento para restaurantes, bares e operações gastronômicas.
 
 O **MesaFlow** nasceu com o objetivo de tornar o atendimento mais rápido, organizado e inteligente, conectando garçons, cozinha, bar e gestão em uma única experiência digital.
 
